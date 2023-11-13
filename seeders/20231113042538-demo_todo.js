@@ -3,17 +3,17 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.bulkInsert("todo_lists", [
+    await queryInterface.bulkInsert("TodoLists", [
       {
-        todo: "belajar1",
-        description: "belajar apa aja yang penting belajar",
+        todo_name: "belajar",
         status: true,
+        description: "belajar apa aja yang penting belajar",
         user_access: 1,
       },
     ]);
   },
 
   async down(queryInterface, Sequelize) {
-    await queryInterface.bulkDelete("todo_lists", null);
+    await queryInterface.bulkDelete("TodoLists", null, {});
   },
 };
