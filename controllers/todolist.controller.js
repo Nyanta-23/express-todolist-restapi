@@ -172,7 +172,7 @@ module.exports = {
         });
       } else {
         const deleteAll = await TodoLists.destroy({
-          where: {},
+          where: { user_access: req.params.userId },
         });
 
         res.status(200).json({
